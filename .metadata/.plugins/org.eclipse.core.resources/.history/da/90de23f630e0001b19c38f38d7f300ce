@@ -1,0 +1,43 @@
+package QAmonCodeTest_AcquireAngel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SignPage_Pom_TestNG {
+	
+	private static WebDriver driver=null;
+	
+	@BeforeTest
+	public void setUpTest()
+	{
+		WebDriverManager.firefoxdriver().setup();
+		driver=new FirefoxDriver();
+	}
+	
+	@Test
+	public void testStep1() throws InterruptedException
+	{
+		driver.get("https://nexchar.com/signin");
+		
+		//email
+		SignInPage_Object_Locator.emailaddress(driver).sendKeys("");
+		
+		//password test action
+		SignInPage_Object_Locator.password(driver).sendKeys("");
+		
+		//remember me
+		SignInPage_Object_Locator.rememberme(driver).click();
+		
+		
+		
+		Thread.sleep(3000);
+	}
+	
+
+}

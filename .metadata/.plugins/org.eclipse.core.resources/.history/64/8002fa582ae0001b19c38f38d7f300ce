@@ -1,0 +1,43 @@
+package QAmonCodeTest_Nexchar;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class WebElement_Execution_Test {
+    public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver= new FirefoxDriver();
+		
+		//URL visit
+		driver.get("https://nexchar.com/signup");
+		
+		//form fillUp with 	
+	    driver.findElement(By.id("Name")).sendKeys("Humayara");
+	    //drop down menu
+	 	Select dropdownbox=new Select(driver.findElement(By.id("CategoryId")));
+	 	
+	 	dropdownbox.selectByValue("1");
+	 	/*dropdownbox.selectByValue("2");
+	 	dropdownbox.selectByValue("3");
+	 	dropdownbox.selectByValue("4");
+	 	dropdownbox.selectByValue("5");
+	 	dropdownbox.selectByValue("6");
+	 	dropdownbox.selectByValue("9");
+	 	dropdownbox.selectByValue("10");
+	 	dropdownbox.selectByValue("11");
+	 	dropdownbox.selectByValue("50"); */
+	 	
+	 	//email address
+	 	driver.findElement(By.id("Email")).sendKeys("");
+	 	driver.findElement(By.id("Password")).sendKeys("");
+	 	driver.findElement(By.id("NotReceiveNewsLetter")).click();
+	 	driver.findElement(By.xpath("")).click();
+	 	
+	 	
+}
+
+}

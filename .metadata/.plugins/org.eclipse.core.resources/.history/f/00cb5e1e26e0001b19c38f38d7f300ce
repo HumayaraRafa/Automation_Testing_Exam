@@ -1,0 +1,21 @@
+package QAmonCodeTest_Nexchar;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class WebElement_Execution_Test {
+    public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver= new FirefoxDriver();
+		
+		//URL visit
+		driver.get("https://nexchar.com/signup");
+		
+		//form fillUp with 	
+	    driver.findElement(By.id("Name")).sendKeys("abcd");
+}
+
+}

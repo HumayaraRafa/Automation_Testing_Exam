@@ -1,0 +1,18 @@
+package QAmonCodeTest_AcquireAngel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class SignInPage_Object_Locator {
+	
+private static WebElement element=null;
+	
+	public static WebElement twitter(WebDriver driver)
+	{
+     element=driver.findElement(By.xpath("//span[@class='icon-twitter']"));
+     return element;
+     
+    }
+
+}
